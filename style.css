@@ -1,0 +1,261 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.homeBody{
+    background-image: url(./images/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.captionHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+}
+.captionHolder img{
+    width: 300px;
+    height: 300px;
+}
+.caption h1{
+    font-size: 7rem;
+    color: black;
+    font-family: monospace;
+}
+.caption p{
+    font-size: 3rem;
+    color: black;
+    font-weight: 400;
+    text-shadow: 0 0 10px black;
+    text-align: center;
+}
+.homeButton{
+    display: block;
+    margin: 10vh auto;
+    padding: 0.7rem 2rem;
+    font-size: 3rem;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+.homeButton a{
+    text-decoration: none;
+    color: white;
+}
+button:hover{
+    background-color: darkred;
+}
+.optionsBody{
+    background-image: url(./images/bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.optionsBody h1{
+    margin-top: 20vh;
+    font-size: 5rem;
+    color: black;
+    text-shadow: 0 0 10px black;
+    margin-bottom: 8vh;
+}
+.optionbuttons{
+    display: block;
+    margin: 2vh auto;
+    padding: 10px 20px;
+    font-size: 3rem;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+.optionbuttons a{
+    text-decoration: none;
+    color: white;
+}
+.htmlBody, .cssbody, .javascriptBody{
+    background-image: url(./images/bg7.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quizh1{
+    margin: 5vh;
+    font-size: 3rem;
+}
+.quiz-container {
+      background: #fff;
+      width: 50vw;
+      margin: auto;
+      margin-top: 10vh;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      font-size: 1.3rem;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    .option {
+      margin: 10px 0;
+    }
+    .nextbutton{
+        margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+      background-color: skyblue;
+    }
+    .nextbutton:hover{
+        
+        color: white;
+    }
+    #restartButton{
+        display: block;
+        margin:  auto;
+        margin-top: 10vh;
+        padding: 15px;
+        width: 20%;
+        cursor: pointer;
+        background-color: skyblue;
+    }
+.correct {
+  background-color: lightgreen; 
+}
+
+.wrong {
+  background-color: crimson; 
+}
+
+@media(max-width: 780px){
+    .homeBody, .optionsBody, .htmlBody, .cssbody, .javascriptBody{
+        background-attachment: scroll;
+    }
+    .captionHolder{
+        flex-direction: column;
+        margin-top: 10vh;
+    }
+    .captionHolder img{
+        width: 200px;
+        height: 200px;
+    }
+    .caption h1{
+        font-size: 4rem;
+    }
+    .caption p{
+        font-size: 2rem;
+    }
+    .homeButton{
+        font-size: 2rem;
+        padding: 0.5rem 1.5rem;
+    }
+    .optionsBody h1{
+        font-size: 3rem;
+        margin-top: 10vh;
+    }
+    .optionbuttons{
+        font-size: 2rem;
+        padding: 0.5rem 1.5rem;
+        margin: 1vh auto;
+    }
+    .quiz-container {
+        width: 90vw;
+        padding: 15px;
+        font-size: 1rem;
+      }
+      .nextbutton{
+          padding: 8px;
+      }
+      #restartButton{
+          width: 50%;
+          padding: 10px;
+      }
+}
+
+@media(max-width: 480px){
+    .caption h1{
+        font-size: 3rem;
+    }
+    .caption p{
+        font-size: 1.5rem;
+    }
+    .homeButton{
+        font-size: 1.5rem;
+        padding: 0.3rem 1rem;
+    }
+    .optionsBody h1{
+        font-size: 2rem;
+        margin-top: 10vh;
+    }
+    .optionbuttons{
+        font-size: 1.5rem;
+        padding: 0.3rem 1rem;
+        margin: 1vh auto;
+    }
+    .quiz-container {
+        width: 95vw;
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+      .nextbutton{
+          padding: 6px;
+      }
+      #restartButton{
+          width: 70%;
+          padding: 8px;
+      }
+
+}
+
+@media(max-width: 400px){
+    .caption h1{
+        font-size: 2rem;
+    }
+    .caption p{
+        font-size: 1rem;
+    }
+    .homeButton{
+        font-size: 1rem;
+        padding: 0.2rem 0.5rem;
+    }
+    .optionsBody h1{
+        font-size: 1.5rem;
+        margin-top: 10vh;
+    }
+    .optionbuttons{
+        font-size: 1rem;
+        padding: 0.2rem 0.5rem;
+        margin: 1vh auto;
+    }
+    .quiz-container {
+        width: 100vw;
+        padding: 5px;
+        font-size: 0.8rem;
+      }
+      .nextbutton{
+          padding: 4px;
+      }
+      #restartButton{
+          width: 90%;
+          padding: 6px;
+      }
+      
+
+}
