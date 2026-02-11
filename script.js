@@ -1116,9 +1116,19 @@ const cText = document.getElementById("c_text");
 const dText = document.getElementById("d_text");
 const submitBtn = document.getElementById("submit");
 
+
+const quizType = page.includes("html") ? "html"
+  : page.includes("css") ? "css"
+  : page.includes("javascript") ? "js"
+  : null;
+
+const storageKey = `quizProgress_${quizType}`;
+
+
 let currentQuestion = 0;
 let score = 0;
 
+loadProgress();
 loadQuiz();
 
 function loadQuiz() {
@@ -1167,6 +1177,7 @@ submitBtn.addEventListener("click", () => {
   });
 
   if (selected === correctAnswer) score++;
+  saveProgress();
   setTimeout(() => {
   clearColors();
   currentQuestion++;
@@ -1174,6 +1185,7 @@ submitBtn.addEventListener("click", () => {
   if (currentQuestion < quizzes.length) {
     loadQuiz();
   } else {
+    localStorage.removeItem(storageKey);
     document.querySelector(".quiz-container").innerHTML = `
       <h2>You scored ${score} out of ${quizzes.length}🎉</h2>
       <button onclick="location.reload()" id = 'restartButton'>Restart Quiz</button>
@@ -1188,3 +1200,20 @@ function clearColors() {
   });
 };
 
+
+function saveProgress() {
+  const progress = {
+    currentQuestion,
+    score
+  };
+
+  localStorage.setItem(storageKey, JSON.stringify(progress));
+}
+function loadProgress() {
+  const saved = JSON.parse(localStorage.getItem(storageKey));
+
+  if (saved) {
+    currentQuestion = saved.currentQuestion;
+    score = saved.score;
+  }
+}
