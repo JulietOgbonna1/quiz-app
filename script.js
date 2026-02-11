@@ -1187,7 +1187,4 @@ function clearColors() {
     optionDiv.classList.remove("correct", "wrong");
   });
 };
-function saveData(quizanswers) {
-  localStorage.getI
-}
 
