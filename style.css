@@ -146,7 +146,7 @@ button:hover{
 
 @media(max-width: 780px){
     .homeBody, .optionsBody, .htmlBody, .cssbody, .javascriptBody{
-        background-attachment: scroll;
+        background-attachment: fixed;
     }
     .captionHolder{
         flex-direction: column;

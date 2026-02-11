@@ -1175,7 +1175,7 @@ submitBtn.addEventListener("click", () => {
     loadQuiz();
   } else {
     document.querySelector(".quiz-container").innerHTML = `
-      <h2>You scored ${score} out of ${quizzes.length}</h2>
+      <h2>You scored ${score} out of ${quizzes.length}🎉</h2>
       <button onclick="location.reload()" id = 'restartButton'>Restart Quiz</button>
     `
   }
@@ -1187,4 +1187,7 @@ function clearColors() {
     optionDiv.classList.remove("correct", "wrong");
   });
 };
+function saveData(quizanswers) {
+  localStorage.getI
+}
 
