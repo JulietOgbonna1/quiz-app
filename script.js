@@ -1174,8 +1174,10 @@ submitBtn.addEventListener("click", () => {
   if (currentQuestion < quizzes.length) {
     loadQuiz();
   } else {
-    saveData();
-    alert(`Quiz completed! Your score is ${score}`);
+    document.querySelector(".quiz-container").innerHTML = `
+      <h2>You scored ${score} out of ${quizzes.length}</h2>
+      <button onclick="location.reload()" id = 'restartButton'>Restart Quiz</button>
+    `
   }
 }, 1000);
 });
@@ -1186,22 +1188,3 @@ function clearColors() {
   });
 };
 
-
-function saveData() {
-  const userData = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    score: score
-  };
-  localStorage.setItem("quizData", JSON.stringify(userData));
-};
-saveData();
-function loadData() {
-  const savedData = JSON.parse(localStorage.getItem("quizData"));
-  if (savedData) {
-    document.getElementById("name").value = savedData.name;
-    document.getElementById("email").value = savedData.email;
-    alert(`Welcome back, ${savedData.name}! Your last score was ${savedData.score}.`);
-  }
-}
-loadData();
